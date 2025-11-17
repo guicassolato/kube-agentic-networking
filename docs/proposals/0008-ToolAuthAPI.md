@@ -349,8 +349,8 @@ type AuthorizationRule struct {
 	Type *AuthorizationRuleType `json:"type"`
 	// Kubernetes defines a scheme for verifying authorization with the Kubernetes authorization system
 	// It includes fields such as:
-	// - what claim form the identity to use as the `user` (e.g.: `identity.username`)
-	// - what claim form the identity to use as the `group` (e.g.: `identity.group`)
+	// - what claim from the identity to use as the `user` (e.g.: `identity.username`)
+	// - what claim from the identity to use as the `group` (e.g.: `identity.group`)
 	// - where from in the request to extract the name of the resource (e.g.: `request.body["tool-name"]`)
 	// +optional
 	Kubernetes KubernetesAuthorization `json:"kubernetes,omitempty"`
