@@ -22,7 +22,7 @@ The authentication of MCP tool access is not within the scope of this proposal, 
 
 #### Agent Identity
 
-As an AI Engineer, I want to assign a unique, verifiable identity to my agent running in Kubernetes, so that gateways or external systems can securely authenticate it and make authorization decisions.
+As an AI Engineer, I want my agents running in Kubernetes to have unique, verifiable identities assigned, so that gateways or external systems can securely trust these identities and make authorization decisions.
 
 #### Protocol-Aware Authorization for MCP Tools
 
