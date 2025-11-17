@@ -821,13 +821,13 @@ Because Istio fails closed (if you add one ALLOW policy, everything else is deni
 
 Storing authorization policies as Kubernetes resources inherently faces scalability issues in large clusters due to the sheer number of CR objects, the resulting load on the Kubernetes API server, and the memory overhead for controllers watching these objects.
 
-## Kuadrant’s AccessPolicy
+## Kuadrant’s AuthPolicy
 
-Kuadrant's [AccessPolicy](https://docs.kuadrant.io/dev/kuadrant-operator/doc/overviews/auth/) is a specialized Kubernetes Custom Resource specifically designed to bring complex Authentication (AuthN) and Authorization (AuthZ) to the **Kubernetes Gateway API**.
+Kuadrant's [AuthPolicy](https://docs.kuadrant.io/dev/kuadrant-operator/doc/overviews/auth/) is a specialized Kubernetes Custom Resource specifically designed to bring complex Authentication (AuthN) and Authorization (AuthZ) to the **Kubernetes Gateway API**.
 
-While Istio's `AuthorizationPolicy` is excellent for mesh-internal (East/West) traffic and basic Gateway security, Kuadrant's `AccessPolicy` is laser-focused on the complex, messy reality of **North/South (Ingress)** traffic at the network edge. It has first-class support for common standards like OIDC, API Keys, User Metadata.
+While Istio's `AuthorizationPolicy` is excellent for mesh-internal (East/West) traffic and basic Gateway security, Kuadrant's `AuthPolicy` is laser-focused on the complex, messy reality of **North/South (Ingress)** traffic at the network edge. It has first-class support for common standards like OIDC, API Keys, User Metadata.
 
-Kuadrant isn't an enforcement engine itself; it's a control plane. When you create a Kuadrant `AccessPolicy`, it configures **Authorino** behind the scenes. **Authorino** is a highly capable "Envoy External Authorization" (ext_authz) server.
+Kuadrant isn't an enforcement engine itself; it's a control plane. When you create a Kuadrant `AuthPolicy`, it configures **Authorino** behind the scenes. **Authorino** is a highly capable "Envoy External Authorization" (ext_authz) server.
 
 ### Pros
 
